@@ -60,7 +60,7 @@ const ModalFunc: FC<Props> = () => {
               </Text>
             </View>
             <Animated.View style={[animatedStyles, styles.animatedView]}>
-              <Icon color="#fff" size={w(25)} name="Swipe" />
+              <Icon color="#fff" size={w(250)} name="Swipe" />
             </Animated.View>
           </View>
         </TouchableOpacity>
