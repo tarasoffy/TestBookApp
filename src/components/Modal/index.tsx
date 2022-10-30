@@ -1,5 +1,11 @@
 import React, {FC, memo, useEffect, useState} from 'react';
-import {Modal, Text, TouchableOpacity, useWindowDimensions, View} from 'react-native';
+import {
+  Modal,
+  Text,
+  TouchableOpacity,
+  useWindowDimensions,
+  View,
+} from 'react-native';
 import {styles} from './Modalstyles';
 import {Props} from './Modal.props';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -19,7 +25,7 @@ const ModalFunc: FC<Props> = () => {
 
   const [modalVisible, setModalVisible] = useState(true);
 
-  const offset = useSharedValue(width - 150);
+  const offset = useSharedValue(width - w(180));
 
   const animatedStyles = useAnimatedStyle(() => {
     return {
@@ -52,18 +58,20 @@ const ModalFunc: FC<Props> = () => {
         setModalVisible(!modalVisible);
       }}>
       <View style={styles.centredModal}>
-        <TouchableOpacity onPress={() => setModalVisible(!modalVisible)} >
-          <View style={styles.modal}>
+        <View style={styles.modal}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => setModalVisible(!modalVisible)}>
             <View style={styles.wrapperSwipeInfo}>
               <Text style={styles.swipeInfo}>
-                Что бы листать страницы сделайте свайп вправо или влево:
+                Что бы листать страницы сделайте свайп:
               </Text>
             </View>
             <Animated.View style={[animatedStyles, styles.animatedView]}>
-              <Icon color="#fff" size={w(150)} name="Swipe" />
+              <Icon color={Colors.LIGHT_SILVER} size={w(180)} name="Swipe" />
             </Animated.View>
-          </View>
-        </TouchableOpacity>
+          </TouchableOpacity>
+        </View>
       </View>
     </Modal>
   );

@@ -34,7 +34,7 @@ const ReaderWraperFn: FC<Props> = () => {
     try {
       const modalVisible = await AsyncStorage.getItem('modalVisible');
       const modalBoolean = Boolean(modalVisible)
-      dispatch(setModalVisible(true))
+      dispatch(setModalVisible(modalBoolean))
     } catch (e) {}
   }
 

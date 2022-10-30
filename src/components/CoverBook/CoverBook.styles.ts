@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { Colors } from "../../styles/colors";
 import { Fonts } from "../../styles/fonts";
 import { w } from "../../styles/scale";
 
@@ -19,10 +20,10 @@ const styles = StyleSheet.create({
         marginTop: w(5),
     },
     text:{
+        fontSize: w(20),
+        color: Colors.MINE_SHAFT,
+        height: w(25),
         fontFamily: Fonts.Roboto_Regular,
-        fontSize: w(18),
-        color: '#212121',
-        height: w(25)
     }
 });
 
