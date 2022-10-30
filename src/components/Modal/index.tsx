@@ -19,7 +19,7 @@ const ModalFunc: FC<Props> = () => {
 
   const [modalVisible, setModalVisible] = useState(true);
 
-  const offset = useSharedValue(width);
+  const offset = useSharedValue(width - 150);
 
   const animatedStyles = useAnimatedStyle(() => {
     return {
@@ -52,7 +52,7 @@ const ModalFunc: FC<Props> = () => {
         setModalVisible(!modalVisible);
       }}>
       <View style={styles.centredModal}>
-        <TouchableOpacity >
+        <TouchableOpacity onPress={() => setModalVisible(!modalVisible)} >
           <View style={styles.modal}>
             <View style={styles.wrapperSwipeInfo}>
               <Text style={styles.swipeInfo}>
@@ -60,7 +60,7 @@ const ModalFunc: FC<Props> = () => {
               </Text>
             </View>
             <Animated.View style={[animatedStyles, styles.animatedView]}>
-              <Icon color="#fff" size={w(250)} name="Swipe" />
+              <Icon color="#fff" size={w(150)} name="Swipe" />
             </Animated.View>
           </View>
         </TouchableOpacity>
