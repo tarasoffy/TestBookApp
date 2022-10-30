@@ -28,7 +28,7 @@ const ReaderWraperFn: FC<Props> = () => {
 
   const {data} = useSelector((item: ItemData) => item);
 
-  const {goNext} = useReader();
+  const {goNext, changeFontSize} = useReader();
 
   const getVisibleModal = async () => {
     try {
@@ -77,6 +77,10 @@ const ReaderWraperFn: FC<Props> = () => {
     dispatch(setLoadingBook(true))
   };
 
+  const bookFontSizeChange = () => {
+    changeFontSize('14pt')
+  }
+
   return (
     <View>
       <Reader
@@ -91,6 +95,7 @@ const ReaderWraperFn: FC<Props> = () => {
           changeLocation('right');
         }}
         onReady={getData}
+        onStarted={bookFontSizeChange}
       />
       {data.loadingBook && data.modalVisible && <ModalWindow />}
     </View>

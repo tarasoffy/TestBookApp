@@ -12,7 +12,6 @@ import { useNavigation } from '@react-navigation/native';
 import { useDispatch } from 'react-redux';
 import { setCurrencyBook, setCurrencyUrl } from '../../store/slices/dataBookSlice';
 import { Fonts } from '../../styles/fonts';
-import { Icon } from '../Icon';
 
 const CoverBookFunc: FC<Props> = ({
   image, 

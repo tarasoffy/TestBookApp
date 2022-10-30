@@ -25,7 +25,7 @@ const ModalFunc: FC<Props> = () => {
 
   const [modalVisible, setModalVisible] = useState(true);
 
-  const offset = useSharedValue(width - w(180));
+  const offset = useSharedValue(w(width) - w(180));
 
   const animatedStyles = useAnimatedStyle(() => {
     return {
