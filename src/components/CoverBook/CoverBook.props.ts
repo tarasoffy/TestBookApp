@@ -3,7 +3,8 @@ export type Props = {
     nameBook: string,
     authorBook: string,
     url: string,
-    index?: number
+    index: number,
+    invisible?: boolean,
 };
 
 export type Navigate = {

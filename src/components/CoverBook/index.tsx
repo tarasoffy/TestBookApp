@@ -18,7 +18,8 @@ const CoverBookFunc: FC<Props> = ({
   nameBook, 
   authorBook, 
   url,
-  index
+  index,
+  invisible
   }) => {
 
   const dispatch = useDispatch()
@@ -33,7 +34,7 @@ const CoverBookFunc: FC<Props> = ({
 
   return (
       <View style={styles.container}>
-        <TouchableOpacity onPress={goToBook}>
+        <TouchableOpacity disabled={invisible} onPress={goToBook}>
           <Image style={styles.image} source={{uri: image}} />
         </TouchableOpacity>
         <View style={styles.wrapperInfo}>

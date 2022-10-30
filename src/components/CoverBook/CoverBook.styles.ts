@@ -6,7 +6,8 @@ import { w } from "../../styles/scale";
 const styles = StyleSheet.create({
     container: {
         marginTop: w(20),
-        maxWidth: w(150),
+        width: w(150),
+        marginLeft: w(25),
     },
     image: {
         width: w(150),

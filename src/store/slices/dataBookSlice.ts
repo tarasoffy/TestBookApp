@@ -102,6 +102,6 @@ export const {
   setCurrencyBook,
   setCounterPages, 
   setLoadingBook,
-  setModalVisible } = DataBook.actions
+  setModalVisible, } = DataBook.actions
 
 export default DataBook.reducer

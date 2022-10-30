@@ -12,7 +12,6 @@ const HomeScreenFunc: FC<Props> = ({route, navigation}) => {
     <FlatList
       showsVerticalScrollIndicator={false}
       contentContainerStyle={styles.container}
-      columnWrapperStyle={{justifyContent: 'space-around'}}
       numColumns={2}
       data={data}
       renderItem={({item}) => (
@@ -22,6 +21,8 @@ const HomeScreenFunc: FC<Props> = ({route, navigation}) => {
           nameBook={item.nameBook}
           authorBook={item.authorBook}
           url={item.url}
+          index={item.id}
+          invisible={item.invisible}
         />
       )}
       keyExtractor={item => item.id}
